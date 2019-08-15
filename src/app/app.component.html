@@ -1,0 +1,126 @@
+<router-outlet></router-outlet>
+<!-- <nz-card nzType="inner" nzTitle="操作">
+  <button nz-button nzType="primary" (click)="previewfn()">{{preview?'取消预览':'预览'}}</button>
+</nz-card>
+<nz-card>
+  <div>
+    <nz-table #basicData [nzData]="tableList" [nzTitle]="headerTemplate" [nzFooter]="footerTemplate" nzBordered
+      [nzShowPagination]="false">
+      <thead nzSingleSort>
+        <tr>
+          <th nzWidth='8%'>序号</th>
+          <th nzWidth='12%'>阶段</th>
+          <th nzWidth='12%'>类别</th>
+          <th nzWidth='12%'>模块</th>
+          <th nzWidth='32%'>描述</th>
+          <th nzWidth='12%'>工时</th>
+          <th nzWidth='12%'>价格/元</th>
+        </tr>
+        <tr *ngFor="let item of tableList;index as i;">
+          <td *ngIf="item?.idxFix" class="table_td" [attr.rowspan]="item?.idxFix?(!preview?item?.idxLength+1:item?.idxLength):1">
+            {{item?.idx}}
+          </td>
+          <td *ngIf="item?.idxFix" class="table_td" [attr.rowspan]="item?.idxFix?(!preview?item?.idxLength+1:item?.idxLength):1">
+            <ng-container *ngIf="preview">
+              {{item?.level}}
+            </ng-container>
+            <ng-container *ngIf="!preview">
+              <div style="margin-bottom: 5px;">
+                <input type="text" nz-input [(ngModel)]="item.level" placeholder="请输入阶段" (ngModelChange)="modelChange()">
+              </div>
+              <button nz-button (click)="delete(i,'level')">
+                <i nz-icon class="anticon anticon-delete"></i>
+              </button>
+            </ng-container>
+          </td>
+          <td *ngIf="item?.typeFix" class="table_td" [attr.rowspan]="item?.typeFix?(preview?item?.typeLength:item?.typeLength+1):1">
+            <ng-container *ngIf="preview">
+              {{item?.typeName}}
+            </ng-container>
+            <ng-container *ngIf="!preview">
+              <div style="margin-bottom: 5px;">
+                <input type="text" nz-input [(ngModel)]="item.typeName" placeholder="请输入类别" (ngModelChange)="modelChange()">
+              </div>
+              <button nz-button (click)="delete(i,'type')">
+                <i nz-icon class="anticon anticon-delete"></i>
+              </button>
+            </ng-container>
+          </td>
+          <td class="table_td" *ngIf="!item?.addBtnType">
+            <ng-container *ngIf="preview">
+              {{item?.module}}
+            </ng-container>
+            <ng-container *ngIf="!preview">
+              <div style="margin-bottom: 5px;">
+                <input type="text" nz-input [(ngModel)]="item.module" placeholder="请输入模块" (ngModelChange)="modelChange()">
+              </div>
+              <button nz-button (click)="delete(i,'module')">
+                <i nz-icon class="anticon anticon-delete"></i>
+              </button>
+            </ng-container>
+          </td>
+          <td class="table_td" *ngIf="!item?.addBtnType">
+            <textarea nz-input style="height: 100%" [nzAutosize]="{minRows:2}" [disabled]="preview" [(ngModel)]="item.describe"
+              (ngModelChange)="modelChange()">
+
+              </textarea>
+          </td>
+          <td class="table_td" *ngIf="!item?.addBtnType">
+            <ng-container *ngIf="preview">
+              {{item?.workTime}}
+            </ng-container>
+            <ng-container *ngIf="!preview">
+              <input type="text" nz-input [(ngModel)]="item.workTime" placeholder="请输入工时" (ngModelChange)="modelChange()">
+            </ng-container>
+          </td>
+          <td class="table_td" *ngIf="!item?.addBtnType">
+            <ng-container *ngIf="preview">
+              {{(item?.workTime*priceValue?item?.workTime*priceValue:0)|number:'1.0-2'}}
+            </ng-container>
+            <ng-container *ngIf="!preview">
+              <input type="text" nz-input [ngModel]="(item?.workTime*priceValue?item?.workTime*priceValue:0)|number:'1.2-2'"
+                disabled>
+            </ng-container>
+          </td>
+          <ng-container *ngIf="item?.addBtnType" [ngSwitch]="item?.addBtnType">
+            <td *ngSwitchCase="'module'" class="table_td" [attr.colspan]="4">
+              <button nz-button nzType="primary" (click)="add(i,item,'module')">
+                <i nz-icon class="anticon anticon-plus "></i>
+                添加模块
+              </button>
+            </td>
+            <td *ngSwitchCase="'type'" class="table_td" [attr.colspan]="5">
+              <button nz-button nzType="primary" (click)="add(i,item,'type')">
+                <i nz-icon class="anticon anticon-plus "></i>
+                添加类别
+              </button>
+            </td>
+            <td *ngSwitchCase="'level'" class="table_td" [attr.colspan]="7">
+              <button nz-button nzType="primary" (click)="add(i,item,'level')">
+                <i nz-icon class="anticon anticon-plus "></i>
+                添加阶段
+              </button>
+            </td>
+          </ng-container>
+        </tr>
+      </thead>
+    </nz-table>
+
+    <ng-template #headerTemplate>
+      <div>
+        <span style="font-size: 19px;font-weight:bold;">报价单</span>
+        <div style="display: inline-block;float: right;">
+          <input nz-input placeholder="请输入" type="number" [(ngModel)]="priceValue" (ngModelChange)="modelChange()">
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #footerTemplate>
+      <div style="text-align: right;">
+        <span style="font-size: 19px;font-weight: bold;">
+          总计：{{sum}}
+        </span>
+      </div>
+    </ng-template>
+  </div>
+</nz-card> -->
